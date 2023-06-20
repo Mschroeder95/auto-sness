@@ -1,0 +1,415 @@
+[gd_scene load_steps=18 format=3 uid="uid://1uyi8ffsqmbp"]
+
+[ext_resource type="Script" path="res://characters/character.gd" id="1_giw3s"]
+[ext_resource type="Texture2D" uid="uid://jj621u3a6xen" path="res://sprite-sheets/donkey-kong.png" id="2_saejm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t3p8"]
+size = Vector2(33, 31)
+
+[sub_resource type="Animation" id="Animation_jpah7"]
+resource_name = "walk-right"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(6, 201, 38, 38), Rect2(53, 201, 39, 38), Rect2(97, 201, 43, 38), Rect2(147, 202, 44, 38), Rect2(197, 203, 46, 37), Rect2(249, 204, 45, 36), Rect2(300, 203, 44, 37), Rect2(351, 203, 43, 38), Rect2(401, 202, 42, 39), Rect2(450, 202, 40, 40), Rect2(499, 201, 38, 41), Rect2(544, 201, 37, 41), Rect2(588, 202, 39, 41), Rect2(632, 203, 40, 40), Rect2(678, 205, 41, 39), Rect2(728, 207, 40, 38), Rect2(774, 208, 39, 36), Rect2(818, 208, 38, 36), Rect2(861, 207, 38, 38), Rect2(904, 207, 38, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_iogko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(6, 201, 38, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_25hil"]
+resource_name = "walk-left"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(6, 201, 38, 38), Rect2(53, 201, 39, 38), Rect2(97, 201, 43, 38), Rect2(147, 202, 44, 38), Rect2(197, 203, 46, 37), Rect2(249, 204, 45, 36), Rect2(300, 203, 44, 37), Rect2(351, 203, 43, 38), Rect2(401, 202, 42, 39), Rect2(450, 202, 40, 40), Rect2(499, 201, 38, 41), Rect2(544, 201, 37, 41), Rect2(588, 202, 39, 41), Rect2(632, 203, 40, 40), Rect2(678, 205, 41, 39), Rect2(728, 207, 40, 38), Rect2(774, 208, 39, 36), Rect2(818, 208, 38, 36), Rect2(861, 207, 38, 38), Rect2(904, 207, 38, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1jsxo"]
+resource_name = "walk-up"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(3, 319, 41, 36), Rect2(53, 322, 39, 32), Rect2(149, 317, 37, 37), Rect2(200, 317, 34, 35), Rect2(249, 314, 34, 36), Rect2(300, 315, 37, 34), Rect2(356, 319, 35, 29), Rect2(410, 316, 38, 32), Rect2(463, 311, 38, 38), Rect2(517, 311, 34, 40), Rect2(568, 310, 37, 43), Rect2(616, 312, 38, 40), Rect2(668, 313, 39, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7slgd"]
+resource_name = "walk-down"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(3, 319, 41, 36), Rect2(53, 322, 39, 32), Rect2(149, 317, 37, 37), Rect2(200, 317, 34, 35), Rect2(249, 314, 34, 36), Rect2(300, 315, 37, 34), Rect2(356, 319, 35, 29), Rect2(410, 316, 38, 32), Rect2(463, 311, 38, 38), Rect2(517, 311, 34, 40), Rect2(568, 310, 37, 43), Rect2(616, 312, 38, 40), Rect2(668, 313, 39, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fg2lb"]
+resource_name = "attack-right-1"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39), Rect2(79, 2088, 40, 40), Rect2(135, 2084, 40, 44), Rect2(191, 2076, 35, 52), Rect2(247, 2069, 32, 59), Rect2(303, 2071, 33, 56), Rect2(359, 2073, 35, 54), Rect2(415, 2076, 36, 50), Rect2(471, 2079, 39, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_258ox"]
+resource_name = "attack-left-1"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39), Rect2(79, 2088, 40, 40), Rect2(135, 2084, 40, 44), Rect2(191, 2076, 35, 52), Rect2(247, 2069, 32, 59), Rect2(303, 2071, 33, 56), Rect2(359, 2073, 35, 54), Rect2(415, 2076, 36, 50), Rect2(471, 2079, 39, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p3cnp"]
+resource_name = "stand-left"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ymhh3"]
+resource_name = "stand-right"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6ddma"]
+resource_name = "stand-down"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_twahx"]
+resource_name = "stand-up"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_i8jak"]
+resource_name = "attack-up-1"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39), Rect2(79, 2088, 40, 40), Rect2(135, 2084, 40, 44), Rect2(191, 2076, 35, 52), Rect2(247, 2069, 32, 59), Rect2(303, 2071, 33, 56), Rect2(359, 2073, 35, 54), Rect2(415, 2076, 36, 50), Rect2(471, 2079, 39, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0dwqe"]
+resource_name = "attack-down-1"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(24, 2092, 40, 39), Rect2(79, 2088, 40, 40), Rect2(135, 2084, 40, 44), Rect2(191, 2076, 35, 52), Rect2(247, 2069, 32, 59), Rect2(303, 2071, 33, 56), Rect2(359, 2073, 35, 54), Rect2(415, 2076, 36, 50), Rect2(471, 2079, 39, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dfxg"]
+_data = {
+"RESET": SubResource("Animation_iogko"),
+"attack-down-1": SubResource("Animation_0dwqe"),
+"attack-left-1": SubResource("Animation_258ox"),
+"attack-right-1": SubResource("Animation_fg2lb"),
+"attack-up-1": SubResource("Animation_i8jak"),
+"stand-down": SubResource("Animation_6ddma"),
+"stand-left": SubResource("Animation_p3cnp"),
+"stand-right": SubResource("Animation_ymhh3"),
+"stand-up": SubResource("Animation_twahx"),
+"walk-down": SubResource("Animation_7slgd"),
+"walk-left": SubResource("Animation_25hil"),
+"walk-right": SubResource("Animation_jpah7"),
+"walk-up": SubResource("Animation_1jsxo")
+}
+
+[node name="character-1" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_giw3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1t3p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_saejm")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(6, 201, 38, 38)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6dfxg")
+}
